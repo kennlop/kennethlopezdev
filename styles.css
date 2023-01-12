@@ -286,16 +286,15 @@ SCROLLING TEXT STUFF
 
   @media screen and (max-width:450px) {
     .header{
-      font-size: 20px;
+      font-size: 30px;
       letter-spacing: 0px
     }
-    
+      
     .nav{ 
         left: 0;
         top: 0;
         bottom: 0;
-        width: 45%;
-        
+        width: 100%;    
     }
 
     .pages{
@@ -304,17 +303,17 @@ SCROLLING TEXT STUFF
       font-size: 14px;
       font-weight: 700;
       margin-top: 10px;
-  }
+    }
 
-  li:not(:last-child) {
-    margin-bottom: 5px;
-}
+    li:not(:last-child) {
+      margin-bottom: 5px;
+    }
 
 
-  .project-name{
-      font-family: 'Quicksand', sans-serif;
-      font-size: 20px;
-      font-weight: 100;
-      text-transform: uppercase;
-  }
+    .project-name{
+        font-family: 'Quicksand', sans-serif;
+        font-size: 20px;
+        font-weight: 100;
+        text-transform: uppercase;
+    }
   }
