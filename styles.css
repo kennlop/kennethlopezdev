@@ -46,6 +46,10 @@ canvas {
 }
 
 .container{
+    overflow-y: hidden;
+
+    height: 92vh;
+
     border: solid black 1px;
     position: fixed;
     left: var(--pad);
@@ -126,11 +130,14 @@ li:not(:last-child) {
     right: calc(var(--pad)*1);
     bottom: calc(var(--pad)*1);
 
-    
-    /* For adding scrollablility to the site
-    overflow-x: hidden;
-    overflow-y: auto; */
+    height: 90%;
+    overflow-y: auto;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 
 .project-name{
     font-family: 'Quicksand', sans-serif;
