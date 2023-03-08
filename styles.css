@@ -48,7 +48,7 @@ canvas {
 .container{
     overflow-y: hidden;
 
-    height: 92vh;
+    height: 92vh; 
 
     border: solid black 1px;
     position: fixed;
