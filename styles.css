@@ -139,7 +139,8 @@ li:not(:last-child) {
 
   position:  absolute;
   right: calc(var(--pad)*1);
-  bottom: calc(var(--pad)*1);
+  bottom: calc(var(--pad)*0);
+  padding-bottom: 20px;
   
   
   /*Scroll on projects page*/
@@ -347,6 +348,9 @@ p{
 
 
 @media screen and (max-width:450px) {
+  body{
+    overflow-x: hidden;
+  }
   .header{
     font-size: 30px;
     letter-spacing: 0px
