@@ -78,24 +78,30 @@ a:hover {
     height: 200px;
 }
 
+.images-container {
+    padding: 5px;
+    width: fit-content; /* Adjusted to fit the content of the container */
+    overflow-x: scroll; /* Allow horizontal scrolling */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Items arranged in a row */
+    overflow-x: hidden;
+}
+
 .project-images {
-    padding: 10px;
-    width:auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 10px; /* Adjust the gap as needed */
-    margin: 0 auto; /* Center the grid */
-    grid-auto-rows: minmax(10, auto); /* Set minimum row size based on content */
-    overflow-y: scroll;
+    padding: 5px;
+    width: 50%; /* Each column takes up half of the container width */
+    display: flex;
+    flex-direction: column;
 }
 
 .project-images img {
-    width: 100%; /* Images will take up the full width of their grid cell */
-    height: auto; /* Maintain the aspect ratio of the images */
-    max-width: 100%; /* Images won't stretch beyond their natural size */
-    display: block; /* Remove extra space below the image */
-    border: 1px solid #ccc; /* Optional: Add a border for visual separation */
+    width: 100%; /* Images take up the full width of their container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent images from stretching beyond their natural size */
+    border: 1px solid #ccc; /* Optional: Add border for visual separation */
+    margin-bottom: 8px;
 }
+
 
 .about-info{
     min-width: 483px; /* Set minimum width */
