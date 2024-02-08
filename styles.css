@@ -2,7 +2,6 @@
     font-family: 'Neue-Haas';
     src: url('assets/NHaasGroteskDSPro-55Rg.otf') format('opentype');
 }
-
 @font-face {
     font-family: 'Neue-Haas-Italic';
     src: url('assets/NHaasGroteskDSPro-56It.otf') format('opentype');
@@ -13,15 +12,20 @@ body{
     margin: 0px;
     padding: 0px;
     display: flex;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
 }
 
 .page-content{
     padding-top: 10px;
     display: flex;
     flex-direction: column;
-    width: 483px;
+    min-width: 483px; /* Set minimum width */
+    max-width: 483px; /* Set maximum width */
     border-right: solid 1px ;
     height: 99vh;
+    overflow-y: hidden;
 }
 
 hr {
@@ -37,9 +41,24 @@ hr {
 
 .default-copy, .project-name, .project-info, .project-type, .project-year{
     font-family: 'Neue-Haas';
-    font-size: 12px;
-    font-weight: 200; 
+    font-size: 14px;
+    font-weight: 500; 
     display: inline;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    display: inline-block; /* Ensures the background spans the entire width of the link */
+    padding: 0.0em 0.2em; /* Adjust padding as needed */
+    background-color: #e4e4e4; /* Grey background color */
+    border-radius: 5px; /* Adds rounded corners to the box */
+    text-decoration: none; /* Removes default link underline */
+    color: #272626; /* Text color */
+}
+
+a:hover {
+    background-color: #d9d9d9; /* Darker grey background color on hover */
 }
 
 .project-name, .default-copy{
@@ -61,13 +80,13 @@ hr {
 
 .project-images {
     padding: 10px;
-    width: 80vw; /* Set the width of the div to 60% of the viewport width */
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 columns */
-            gap: 10px; /* Adjust the gap as needed */
-            margin: 0 auto; /* Center the grid */
-            grid-auto-rows: minmax(10, auto); /* Set minimum row size based on content */
-            overflow-y: scroll;
+    width:auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 10px; /* Adjust the gap as needed */
+    margin: 0 auto; /* Center the grid */
+    grid-auto-rows: minmax(10, auto); /* Set minimum row size based on content */
+    overflow-y: scroll;
 }
 
 .project-images img {
@@ -79,7 +98,10 @@ hr {
 }
 
 .about-info{
-
-    justify-content: flex-end;
-    align-items: ;
+    min-width: 483px; /* Set minimum width */
+    max-width: 483px; /* Set maximum width */
+    display: inline-block;
+    position: absolute;
+    bottom: 14; /* Align the element to the bottom */
+    left: 0; /* Align the element to the left */
 }
