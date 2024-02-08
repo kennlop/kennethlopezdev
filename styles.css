@@ -138,16 +138,13 @@ li:not(:last-child) {
   flex-direction: column;
 
   position:  absolute;
-  right: calc(var(--pad)*1);
+  right: 2%;
   bottom: calc(var(--pad)*0);
   padding-bottom: 20px;
-  
-  
   /*Scroll on projects page*/
   overflow-y: auto;
-  
   height: 92vh;
-  width: 80vw;
+
 }
 
 .projects{
@@ -388,4 +385,23 @@ p{
       text-transform: uppercase;
   }
   
+}
+
+.hover-image {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-55%, -50%);
+  z-index: 1;
+  height: 700px;
+}
+
+.projects:hover .hover-image {
+  display: block;
+}
+
+span.project-info{
+  font-size: 14px;
+  font-weight: 400;
 }
