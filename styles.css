@@ -1,407 +1,85 @@
-html {
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 50px; /* Adjust as needed */
+@font-face {
+    font-family: 'Neue-Haas';
+    src: url('assets/NHaasGroteskDSPro-55Rg.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'neue_montreallight';
-  src: url('/webkit/neue_montreal_light_300-webfont.woff2') format('woff2'),
-       url('/webkit/neue_montreal_light_300-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
+    font-family: 'Neue-Haas-Italic';
+    src: url('assets/NHaasGroteskDSPro-56It.otf') format('opentype');
+    /* Add more src lines if you have multiple font formats */
 }
 
-@font-face {
-  font-family: 'neue_montrealregular';
-  src: url('/webkit/neue_montreal_regular_400-webfont.woff2') format('woff2'),
-       url('/webkit/neue_montreal_regular_400-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
+body{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
 }
 
-:root {
-  --c-bg: hsl(0, 0%, 90%);
-  --c-text: hsl(0, 0%, 10%);
-  --pad: max(20px, 4vmin);
+.page-content{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 483px;
+    border-right: solid 1px ;
+    height: 99vh;
 }
 
-*{
-  margin: 0;
-  padding: 0;
-
-  transition-timing-function: ease-in-out;
-  -ms-transition-timing-function: ease-in-out;
-  -moz-transition-timing-function: ease-in-out;
-  -webkit-transition-timing-function: ease-in-out;
-  -o-transition-timing-function: ease-in-out;
-  transition-duration: 0.2s;
-  -ms-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
+hr {
+    background: rgba(0, 0, 0, 1);
+    border: 0;
+    height: 1px;
+    display: block;
 }
 
-canvas {
-position:absolute;
-z-index:-1;
-width: 100%;
-height: 91.9vh;
+.project-content{
+    display: inline;
 }
 
-.container{
-  border: solid black 1px;
-  position: fixed;
-  left: var(--pad);
-  right: var(--pad);
-  top: var(--pad);
-  bottom: var(--pad);
-  
-  /*Scroll on projects page*/
-  height: 92vh;
-  overflow-y: scroll;
+.default-copy, .project-name, .project-info, .project-type, .project-year{
+    font-family: 'Neue-Haas';
+    font-size: 12px;
+    font-weight: 200; 
+    display: inline;
 }
 
-.header{
-
-  font-family: 'Quicksand', sans-serif;
-  font-size: 60px;
-  font-weight: 100;
-  letter-spacing: -4px
+.project-name, .default-copy{
+    padding-left: 15px;
 }
 
-.nav{ 
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 45%;
-  margin-top: 1.8rem;
-  margin-left: 2rem;
+.project-name, .project-info, .project-type, .project-year{
+    display: inline;
 }
 
-.pages{
-  list-style-type: none;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 14px;
-  margin-top: 3rem;
-  font-weight: 400;
+.project-info, .project-type, .project-year{
+    text-align: right;
+    align-items: end;
 }
 
-.bio-right{
-  font-family: 'Quicksand', sans-serif, semi-bold;
-  font-size: 14px;
-  font-weight: 400;
-
-  position: absolute;
-  right: calc(var(--pad)*1);
-  bottom: calc(var(--pad)*1);
-  width: 12vh;
+.spacer{
+    height: 200px;
 }
 
-a:link    { color:black; text-decoration: none; }
-a:visited { color:black; text-decoration: none; }
-
-a{
-  cursor: pointer;
-  color: black;
+.project-images {
+    padding: 10px;
+    width: 80vw; /* Set the width of the div to 60% of the viewport width */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            gap: 10px; /* Adjust the gap as needed */
+            margin: 0 auto; /* Center the grid */
+            grid-auto-rows: minmax(10, auto); /* Set minimum row size based on content */
+            overflow-y: scroll;
 }
 
-
-
-a:hover{
-  cursor: pointer;
-  color:grey;
+.project-images img {
+    width: 100%; /* Images will take up the full width of their grid cell */
+    height: auto; /* Maintain the aspect ratio of the images */
+    max-width: 100%; /* Images won't stretch beyond their natural size */
+    display: block; /* Remove extra space below the image */
+    border: 1px solid #ccc; /* Optional: Add a border for visual separation */
 }
 
-li:not(:last-child) {
-  margin-bottom: 20px;
-}
+.about-info{
 
-.title{
-  font-family: 'Quicksand', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.projects-title{
-  padding-top: 190px;
-}
-
-.projects-right{
-  font-family: 'Quicksand', sans-serif, semi-bold;
-  font-size: 14px;
-  font-weight: 400;
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-
-  position:  absolute;
-  right: 2%;
-  bottom: calc(var(--pad)*0);
-  padding-bottom: 20px;
-  /*Scroll on projects page*/
-  overflow-y: auto;
-  height: 92vh;
-
-}
-
-.projects{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: baseline;
-}
-
-::-webkit-scrollbar {
-  display:none;
-}
-
-.project-name{
-  font-family: 'Quicksand', sans-serif;
-  font-size: 60px;
-  font-weight: 100;
-  text-transform: uppercase;
-}
-
-.contact{
-  font-family: 'Quicksand', sans-serif, semi-bold;
-  font-size: 14px;
-  font-weight: 700;
-  text-align: right;
-
-  position: absolute;
-  right: calc(var(--pad)*1);
-  bottom: calc(var(--pad)*1);
-}
-
-
-
-
-/*
-SCROLLING TEXT STUFF
-*/
-.marquee-wrapper{
-  background:none;
-  text-align:center;
-}
-.marquee-wrapper .marq-container{
-  overflow:hidden;
-}
-.marquee-inner span{
-  float:left;
-  width:50%;
-}
-.marquee-wrapper .marquee-block{
-  --total-marquee-items:6;
-  height: 2px;
-  width: 14.1rem;
-  /*width: calc(237px * (var(--total-marquee-items))); */
-  overflow: hidden;
-  box-sizing: border-box;
-  position: relative;
-  margin: 0px auto;
-  background: none;
-  padding: 30px 0;
-  margin-top: -37px;
-}
-
-/*
-MARGIN FOR THE BOTTOM SCROLLING TEXT
-*/
-.marquee-wrapper-footer .marquee-block-footer{
-  --total-marquee-items:4;
-  height: 1px;
-  
-  /*THIS LINE IS SUPER IMPORTANT FOR MESSING WITH THE LENGTH OF THE BOXES*/
-  width: calc(15vh * (var(--total-marquee-items)));
-  overflow: hidden;
-  box-sizing: border-box;
-  position: relative;
-  margin: 0px auto;
-  background: none;
-  padding: 0px 0;
-  margin-top: -40px;
-  margin-bottom: 20px;
-}
-
-.marquee-inner{
-  display: block;
-  width: 200%;
-  position: absolute;
-}
-.marquee-inner p{
-  font-family: 'Quicksand', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-}
-.marquee-inner.to-left{
-  animation: marqueeLeft 5s linear infinite;
-}
-.marquee-inner.to-right{
-  animation: marqueeRight 5s linear infinite;
-}
-.marquee-item{
-  width: 250px;
-  padding-top: 10px;
-  height: 30;
-  display: inline-block;
-  margin: 0 5px;
-
-  transition: all .2s ease-out;
-  
-  /*leave this blank to get rid of the background color*/
-  /*the color is useful for determing the size of the boxes*/
-  background:;
-}
-@keyframes marqueeLeft{
-  0% {
-    left: 0;
-  }
-  100% {
-    left: -100%;
-  }
-}
-@keyframes marqueeRight{
-  0% { 
-    left: -100%; 
-  }
-  100% {
-   left: 0; 
-  }
-}
-p{
-    line-height:1.4
-}
-
-
-@media screen and (max-width:1250px) {
-  .header{
-    font-size: 30px;
-    letter-spacing: 0px
-  }
-  .projects-title{
-    padding-top: 160px !important;
-  }
-  .project-name{
-      font-family: 'Quicksand', sans-serif;
-      font-size: 34px;
-      font-weight: 100;
-      text-transform: uppercase;
-  }
-  canvas {
-      height: 91.5vh;
-    }
-}
-
-@media screen and (max-width:700px) {
-  .header{
-    font-size: 30px;
-    letter-spacing: 0px
-  }
-  .project-name{
-      font-family: 'Quicksand', sans-serif;
-      font-size: 34px;
-      font-weight: 100;
-      text-transform: uppercase;
-  }
-
-  canvas {
-      height: 93.5vh;
-    }
-}
-
-@media screen and (max-width:700px) {
-  .header{
-    font-size: 30px;
-    letter-spacing: 0px
-  }
-  .projects-right{
-    width: 65vw;
-  }
-  .project-name{
-    font-family: 'Quicksand', sans-serif;
-    font-size: 24px;
-    font-weight: 100;
-    text-transform: uppercase;
-}
-
-.projects-title{
-  padding-top: 156px !important;
-}
-
-  canvas {
-      height: 95.5vh;
-    }
-    .projects{
-      margin-bottom: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: right;
-      align-items:end;
-    }
-}
-
-
-@media screen and (max-width:450px) {
-  body{
-    overflow-x: hidden;
-  }
-
-  .container{
-    overflow-x: hidden;
-  }
-
-  .header{
-    font-size: 30px;
-    letter-spacing: 0px
-  }
-    
-  .nav{ 
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 100%;    
-  }
-
-  .pages{
-    list-style-type: none;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    margin-top: 10px;
-  }
-
-  li:not(:last-child) {
-    margin-bottom: 5px;
-  }
-
-
-  .project-name{
-      font-family: 'Quicksand', sans-serif;
-      font-size: 20px;
-      font-weight: 100;
-      text-transform: uppercase;
-  }
-  
-}
-
-.hover-image {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 55%;
-  transform: translate(-55%, -50%);
-  z-index: 1;
-  height: 700px;
-}
-
-.projects:hover .hover-image {
-  display: block;
-}
-
-span.project-info{
-  font-size: 14px;
-  font-weight: 400;
+    justify-content: flex-end;
+    align-items: ;
 }
