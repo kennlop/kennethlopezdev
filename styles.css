@@ -49,6 +49,12 @@ hr {
 a{
     text-decoration: none;
     color: black;
+}
+
+/* Code for Live Site, Prototype, Repo background */
+body > div.page-content > div.project-content > div:nth-child(n) > h1.project-name > a{
+    text-decoration: none;
+    color: black;
     display: inline-block; /* Ensures the background spans the entire width of the link */
     padding: 0.0em 0.2em; /* Adjust padding as needed */
     background-color: #e4e4e4; /* Grey background color */
@@ -57,7 +63,7 @@ a{
     color: #272626; /* Text color */
 }
 
-a:hover {
+body > div.page-content > div.project-content > div:nth-child(n) > h1.project-name > a:hover {
     background-color: #d9d9d9; /* Darker grey background color on hover */
 }
 
