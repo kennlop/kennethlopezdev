@@ -117,3 +117,31 @@ body > div.page-content > div.project-content > div:nth-child(n) > h1.project-na
     bottom: 14; /* Align the element to the bottom */
     left: 0; /* Align the element to the left */
 }
+
+
+/* ABOUT PAGE STYLING */
+/* ABOUT PAGE STYLING */
+/* ABOUT PAGE STYLING */
+.about-copy-container{
+    display: flex;
+    padding-left: 15px;
+}
+
+body > div.about-copy-container > div > h1{
+    padding: 0px;
+    display: flex;
+    position: absolute;
+    margin-top: 390px;
+    line-height: 18px;
+}
+
+.skeleton-gif{
+    width: 104px;
+    height: 131px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
