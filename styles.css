@@ -149,11 +149,16 @@ body > div.about-copy-container > div > h1{
     display: none;
 }
 
+body > div.about-copy-container > div > h1{
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (max-width: 1200px){
     .default-copy, .project-name, .project-info, .project-type, .project-year{
         font-size: 12px;
     }
-    .page-content, .images-container, .about-info{
+    .page-content, .images-container, .about-info, .about-copy-container{
         display: none;
     }
 
@@ -185,5 +190,14 @@ body > div.about-copy-container > div > h1{
         padding-left: 10px;
         overflow-x: hidden;
         padding-bottom: 5px;
+    }
+
+    /* ABOUT PAGE*/
+    body > div.mobile-view > div.about-copy-container-mobile > div > h1 {
+        padding: 0px;
+    }
+    .about-copy-container-mobile{
+        padding-left: 15px;
+        margin-top: 22.5vh;
     }
 }
