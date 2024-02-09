@@ -179,7 +179,7 @@ body > div.about-copy-container > div > h1{
     }
 
     .a-img img {
-        width: calc(100vw - 37px); /* Calculate width to include 15px padding on each side */
+        width: calc(100vw - 5px); /* Calculate width to include 15px padding on each side */
         height: auto; /* Maintain aspect ratio */
         max-width: calc(100vw - 30px); /* Prevent images from stretching beyond their natural size */
         padding-left: 10px;
