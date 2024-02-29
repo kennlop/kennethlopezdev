@@ -154,6 +154,14 @@ body > div.about-copy-container > div > h1{
     flex-direction: column;
 }
 
+@media screen and (max-height: 1400px){
+    .spacer{
+        height: 9vh;
+    }
+}
+
+
+
 @media screen and (max-width: 1200px){
     .default-copy, .project-name, .project-info, .project-type, .project-year{
         font-size: 12px;
