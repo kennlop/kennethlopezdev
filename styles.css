@@ -25,7 +25,7 @@ body{
     max-width: 483px; /* Set maximum width */
     border-right: solid 1px ;
     height: 99vh;
-    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
 hr {
